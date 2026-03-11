@@ -1,7 +1,22 @@
-export default function App() {
+import {  Routes, Route, BrowserRouter } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Profile from "./pages/Profile.jsx";
+import SignIn from "./pages/SignIn.jsx";
+import SignUp from "./pages/SignUp.jsx";
+import About from "./pages/About.jsx";
+
+function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/sign-in" element={<SignIn />} />
+      <Route path="/sign-up" element={<SignUp />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;
